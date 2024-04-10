@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://teb7kxeqw1k0"]
+
+[ext_resource type="PackedScene" uid="uid://dtqlbgil4w7hs" path="res://scenes/GCC2D.tscn" id="1_5a83s"]
+[ext_resource type="Texture2D" uid="uid://cp7e4tmp1ktji" path="res://assets/images/NARATION PORTRAIT.webp" id="1_5fcao"]
+[ext_resource type="AudioStream" uid="uid://f3f03vfgxxq4" path="res://assets/audio/Woodland Fantasy.ogg" id="3_me2iu"]
+[ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="4_ghdfo"]
+[ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="5_p72ub"]
+[ext_resource type="AudioStream" uid="uid://cdhimx6205lqc" path="res://assets/audio/click1.ogg" id="6_1136n"]
+
+[sub_resource type="GDScript" id="GDScript_1kn27"]
+script/source = "extends TextureButton
+
+@export var destination: String
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	$Click.play()
+	
+
+
+func _on_click_finished():
+	Global.goto_scene(destination)
+"
+
+[sub_resource type="FontFile" id="FontFile_mrwsh"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/1/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/3/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_xlr5g"]
+default_font = SubResource("FontFile_mrwsh")
+default_font_size = 25
+
+[node name="0" type="Node"]
+metadata/_edit_vertical_guides_ = [-197.0]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GCC2D" parent="Node2D" instance=ExtResource("1_5a83s")]
+anchor_mode = 0
+
+[node name="NarationPortrait" type="Sprite2D" parent="."]
+position = Vector2(360, 790.931)
+scale = Vector2(1.01389, 1.01389)
+texture = ExtResource("1_5fcao")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_me2iu")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -188.0
+offset_right = 169.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_ghdfo")
+texture_pressed = ExtResource("5_p72ub")
+script = SubResource("GDScript_1kn27")
+destination = "res://scenes/main.tscn"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="CanvasLayer/Control/TextureButton"]
+stream = ExtResource("6_1136n")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 72.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme = SubResource("Theme_xlr5g")
+text = "Pinch to zoom and single drag to pan the image."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="CanvasLayer/Control/TextureButton" method="_on_pressed"]
+[connection signal="finished" from="CanvasLayer/Control/TextureButton/Click" to="CanvasLayer/Control/TextureButton" method="_on_click_finished"]

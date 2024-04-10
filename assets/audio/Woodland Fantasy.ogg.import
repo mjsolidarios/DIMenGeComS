@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://f3f03vfgxxq4"
+path="res://.godot/imported/Woodland Fantasy.ogg-6b27510986f0a511dc27809035a17839.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Woodland Fantasy.ogg"
+dest_files=["res://.godot/imported/Woodland Fantasy.ogg-6b27510986f0a511dc27809035a17839.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
