@@ -1,0 +1,315 @@
+[gd_scene load_steps=20 format=3 uid="uid://blqngaajr45yk"]
+
+[ext_resource type="Script" path="res://scenes/CanvasLayer.gd" id="1_jtq5p"]
+[ext_resource type="Texture2D" uid="uid://ciflihamdwbaa" path="res://assets/gui/UI board Small  stone.png" id="2_nm0x6"]
+[ext_resource type="Texture2D" uid="uid://dr1nayy3py6jt" path="res://assets/gui/Exclamation_Gray.png" id="3_qagmr"]
+[ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="4_yy5yp"]
+[ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="5_ahogv"]
+[ext_resource type="AudioStream" uid="uid://cdhimx6205lqc" path="res://assets/audio/click1.ogg" id="6_074wd"]
+[ext_resource type="Texture2D" uid="uid://b4wcyvbs5le4q" path="res://assets/gui/next-default.png" id="7_rsdr4"]
+[ext_resource type="Texture2D" uid="uid://bqk5mckmku4xo" path="res://assets/gui/next-pressed.png" id="8_1j4kk"]
+[ext_resource type="Texture2D" uid="uid://ccb4b2loqjw0e" path="res://assets/gui/menu-default.png" id="9_x3wj4"]
+[ext_resource type="Texture2D" uid="uid://2jqylarmo7ry" path="res://assets/gui/menu-pressed.png" id="10_h5bxc"]
+[ext_resource type="Texture2D" uid="uid://lo7t1cf4juuh" path="res://assets/gui/profile.png" id="11_qqycw"]
+[ext_resource type="Texture2D" uid="uid://budllbdxn84gd" path="res://assets/gui/UI board Medium  stone.png" id="13_twk41"]
+[ext_resource type="Texture2D" uid="uid://v7rqycmwve2j" path="res://assets/gui/UI board Medium  parchment.png" id="14_34xw5"]
+[ext_resource type="Texture2D" uid="uid://bejnwsauxjcav" path="res://assets/gui/IRONY TITLE  empty.png" id="15_aytyf"]
+[ext_resource type="Texture2D" uid="uid://c2fl7ndiqsuuq" path="res://assets/gui/close-default.png" id="16_gv0w1"]
+[ext_resource type="Texture2D" uid="uid://cb6yfvrwpgx52" path="res://assets/gui/close-pressed.png" id="17_1a6gi"]
+
+[sub_resource type="FontFile" id="FontFile_mrwsh"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/1/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/3/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_xlr5g"]
+default_font = SubResource("FontFile_mrwsh")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuvkg"]
+bg_color = Color(0, 0, 0, 0.976471)
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_jtq5p")
+previous_path = "res://scenes/main.tscn"
+next_path = "res://scenes/_1.tscn"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tip" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -361.5
+offset_top = -115.0
+offset_right = 361.5
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_nm0x6")
+
+[node name="Label" type="Label" parent="Control/Tip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -242.0
+offset_right = 299.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_xlr5g")
+text = "Pinch to zoom and touch drag to pan the image."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Tip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -247.0
+offset_right = -205.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_qagmr")
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -280.0
+offset_right = 354.0
+offset_bottom = -168.0
+grow_vertical = 0
+texture_normal = ExtResource("4_yy5yp")
+texture_pressed = ExtResource("5_ahogv")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Control/BackButton"]
+stream = ExtResource("6_074wd")
+
+[node name="NextButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+offset_top = -280.0
+offset_right = -16.0
+offset_bottom = -168.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_rsdr4")
+texture_pressed = ExtResource("8_1j4kk")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Control/NextButton"]
+stream = ExtResource("6_074wd")
+
+[node name="MenuButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -297.0
+offset_top = 81.0
+offset_right = -16.0
+offset_bottom = 193.0
+grow_horizontal = 0
+texture_normal = ExtResource("9_x3wj4")
+texture_pressed = ExtResource("10_h5bxc")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Control/MenuButton"]
+stream = ExtResource("6_074wd")
+
+[node name="Profile" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 59.0
+offset_right = 183.0
+offset_bottom = 221.0
+texture = ExtResource("11_qqycw")
+
+[node name="Popup" type="PanelContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuvkg")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Popup"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13_twk41")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Popup/TextureRect"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 701.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_34xw5")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = -54.0
+offset_right = 197.0
+offset_bottom = 55.0
+grow_horizontal = 2
+texture = ExtResource("15_aytyf")
+
+[node name="Label" type="Label" parent="Control/Popup/TextureRect/TextureRect2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[node name="ClosePanelButton" type="TextureButton" parent="Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.5
+offset_top = -56.0
+offset_right = 197.5
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("16_gv0w1")
+texture_pressed = ExtResource("17_1a6gi")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
+stream = ExtResource("6_074wd")
+
+[node name="Label" type="Label" parent="Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 50
+text = "Sample Content"
+
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="finished" from="Control/BackButton/Click" to="." method="_on_click_finished_back"]
+[connection signal="pressed" from="Control/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="finished" from="Control/NextButton/Click" to="." method="_on_click_finished_next"]
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="finished" from="Control/MenuButton/Click" to="." method="_on_click_finished_menu"]
+[connection signal="pressed" from="Control/Popup/TextureRect/TextureRect2/ClosePanelButton" to="." method="_on_close_panel_button_pressed"]
+[connection signal="finished" from="Control/Popup/TextureRect/TextureRect2/ClosePanelButton/Click" to="." method="_on_click_finished"]
