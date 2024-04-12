@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm6f7boikw6ta"]
+
+[ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_cygbl"]
+[ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_ueldd"]
+
+[node name="0" type="Node"]
+metadata/_edit_vertical_guides_ = [-197.0]
+
+[node name="DefaultStoryContainer" parent="." instance=ExtResource("1_cygbl")]
+StoryImage = null
+
+[node name="GUI" parent="." instance=ExtResource("3_ueldd")]
+previous_path = "res://scenes/_38.tscn"
+next_path = "res://scenes/_40.tscn"

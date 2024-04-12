@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1q8nxfg56tl8"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_u0vm4"]
-[ext_resource type="Texture2D" uid="uid://bvdplwaya0h07" path="res://assets/images/21 revise.webp" id="2_8tv7c"]
+[ext_resource type="Texture2D" uid="uid://bk42cwpyrayun" path="res://assets/images/20 revise.webp" id="2_f1pto"]
 [ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_g12ja"]
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
 
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_u0vm4")]
-StoryImage = ExtResource("2_8tv7c")
+StoryImage = ExtResource("2_f1pto")
 
 [node name="GUI" parent="." instance=ExtResource("3_g12ja")]
 previous_path = "res://scenes/_19.tscn"
-next_path = "res://scenes/main.tscn"
+next_path = "res://scenes/_21.tscn"

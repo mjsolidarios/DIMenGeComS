@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ygwgldv3owrx"]
+
+[ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_vy4py"]
+[ext_resource type="Texture2D" uid="uid://dd6t37kiv6ce3" path="res://assets/images/56.webp" id="2_2aenl"]
+[ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_o110h"]
+
+[node name="0" type="Node"]
+metadata/_edit_vertical_guides_ = [-197.0]
+
+[node name="DefaultStoryContainer" parent="." instance=ExtResource("1_vy4py")]
+StoryImage = ExtResource("2_2aenl")
+
+[node name="GUI" parent="." instance=ExtResource("3_o110h")]
+previous_path = "res://scenes/_55.tscn"
+next_path = "res://scenes/_57.tscn"
