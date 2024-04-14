@@ -121,6 +121,11 @@ func _on_cancel_button_pressed():
 
 func _on_click_cancel_finished():
 	$Control/PopupAnswer.hide()
+
+
+func _on_text_edit_answer_focus_exited():
+	var text = $Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer.text
+	$Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer.text = text.to_upper()
 "
 
 [sub_resource type="FontFile" id="FontFile_i8j86"]
@@ -240,7 +245,7 @@ texture = ExtResource("2_5x5aw")
 script = SubResource("GDScript_je252")
 previous_path = "res://scenes/_17.tscn"
 next_path = "res://scenes/_19.tscn"
-answer = "1"
+answer = "BLUE"
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
@@ -801,6 +806,7 @@ stream = ExtResource("7_5xatd")
 [connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton/Click" to="GUI" method="check_answer"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/CancelButton" to="GUI" method="_on_cancel_button_pressed"]
 [connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/CancelButton/Click" to="GUI" method="_on_click_cancel_finished"]
+[connection signal="focus_exited" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer" to="GUI" method="_on_text_edit_answer_focus_exited"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
 [connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmdmwtqmuttuj"]
+[gd_scene load_steps=38 format=3 uid="uid://bmdmwtqmuttuj"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_pk30d"]
 [ext_resource type="Texture2D" uid="uid://chtjdnj6230of" path="res://assets/images/11 revise.webp" id="2_hb8mi"]
@@ -28,7 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://bv5nxgwwfnvfk" path="res://assets/gui/cancel-pressed.png" id="24_tni0g"]
 [ext_resource type="Texture2D" uid="uid://6xa0f7vljnn7" path="res://assets/gui/check.png" id="25_saoik"]
 [ext_resource type="Texture2D" uid="uid://cmrfht3x6mlg3" path="res://assets/gui/ok-default.png" id="26_6a5no"]
+[ext_resource type="Texture2D" uid="uid://bx66ogl3lr5ps" path="res://assets/gui/buttonLong_beige.png" id="27_2rrk5"]
 [ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="27_8lanf"]
+[ext_resource type="Texture2D" uid="uid://cb1rv5vh466bv" path="res://assets/gui/buttonLong_beige_pressed.png" id="28_1s13m"]
 [ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="28_cnvhm"]
 [ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="29_snwpn"]
 
@@ -82,7 +84,7 @@ func _on_click_finished_next():
 func check_answer():
 	$Control/PopupResult.show()
 	$Control/PopupAnswer.hide()
-	if $Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer.text == answer:
+	if $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower() == answer:
 		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.show()
 		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.hide()
 	else:
@@ -91,7 +93,7 @@ func check_answer():
 
 func _on_sumit_answer_button_pressed():
 	$Control/Popup.hide()
-	$Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton/Click.play()
+	$Control/PopupAnswer/TextureRect/Parchment/SumitAnswerButton/Click.play()
 
 func _on_answer_button_pressed():
 	$Control/PopupAnswer.show()
@@ -110,14 +112,26 @@ func _on_try_again_pressed():
 
 
 func _on_cancel_button_pressed():
-	$Control/PopupAnswer/TextureRect/TextureRect2/CancelButton/Click.play()
+	$Control/PopupAnswer/TextureRect/Parchment/CancelButton/Click.play()
 
 
 func _on_click_cancel_finished():
 	$Control/PopupAnswer.hide()
+
+
+func _on_texture_button_a_pressed():
+	$Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text = \"A\"
+
+
+func _on_texture_button_b_pressed():
+	$Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text = \"B\"
+
+
+func _on_texture_button_c_pressed():
+	$Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text=\"C\"
 "
 
-[sub_resource type="FontFile" id="FontFile_mrwsh"]
+[sub_resource type="FontFile" id="FontFile_6ahja"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -186,7 +200,7 @@ cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
 cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
 
 [sub_resource type="Theme" id="Theme_agiuq"]
-default_font = SubResource("FontFile_mrwsh")
+default_font = SubResource("FontFile_6ahja")
 default_font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l6hn"]
@@ -202,6 +216,7 @@ StoryImage = ExtResource("2_hb8mi")
 script = SubResource("GDScript_lv3a6")
 previous_path = "res://scenes/_10.tscn"
 next_path = "res://scenes/_12.tscn"
+answer = "a"
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
@@ -433,6 +448,7 @@ theme_override_font_sizes/font_size = 50
 text = "Sample Content"
 
 [node name="PopupAnswer" type="PanelContainer" parent="GUI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -526,7 +542,7 @@ texture_pressed = ExtResource("24_tni0g")
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/CancelButton"]
 stream = ExtResource("7_wi5xk")
 
-[node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+[node name="LabelQuestion" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -534,27 +550,37 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -399.5
+offset_top = -461.5
 offset_right = 257.0
-offset_bottom = -312.5
+offset_bottom = -374.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 30
 text = "Do you remember what phenotype 
-refers to again?"
+refers to again? (Tap one box below)"
 
-[node name="Label2" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+[node name="TextureButtonA" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 0
+offset_left = 66.5
+offset_top = 242.0
+offset_right = 643.5
+offset_bottom = 425.0
+texture_normal = ExtResource("27_2rrk5")
+texture_pressed = ExtResource("28_1s13m")
+stretch_mode = 0
+
+[node name="LabelA" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonA"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = -233.5
-offset_right = 246.0
-offset_bottom = -101.5
+offset_left = -256.5
+offset_top = -75.5
+offset_right = 248.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
@@ -563,17 +589,27 @@ text = "A. ) The physical appearance of an
 organism, which is determined
 by its genotype. "
 
-[node name="Label3" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+[node name="TextureButtonB" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 0
+offset_left = 66.5
+offset_top = 458.0
+offset_right = 643.5
+offset_bottom = 641.0
+texture_normal = ExtResource("27_2rrk5")
+texture_pressed = ExtResource("28_1s13m")
+stretch_mode = 0
+
+[node name="LabelB" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = -33.5
-offset_right = 246.0
-offset_bottom = 98.5
+offset_left = -256.5
+offset_top = -75.5
+offset_right = 248.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
@@ -582,17 +618,27 @@ text = "B. )  Phenotype primarily denotes
  the reproductive capabilities of 
 an organism. "
 
-[node name="Label4" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+[node name="TextureButtonC" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 0
+offset_left = 66.5
+offset_top = 682.0
+offset_right = 643.5
+offset_bottom = 865.0
+texture_normal = ExtResource("27_2rrk5")
+texture_pressed = ExtResource("28_1s13m")
+stretch_mode = 0
+
+[node name="LabelC" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = 160.5
-offset_right = 246.0
-offset_bottom = 292.5
+offset_left = -256.5
+offset_top = -75.5
+offset_right = 248.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
@@ -600,6 +646,41 @@ theme_override_font_sizes/font_size = 30
 text = "C. )  Phenotype is primarily 
 concerned with the evolutionary
  history of an organism."
+
+[node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = 366.5
+offset_right = 13.0
+offset_bottom = 421.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 30
+text = "You answered:"
+
+[node name="PlayerAnswer" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 319.5
+offset_right = 141.0
+offset_bottom = 456.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PopupResult" type="PanelContainer" parent="GUI/Control"]
 visible = false
@@ -811,6 +892,9 @@ stream = ExtResource("7_wi5xk")
 [connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/Parchment/SumitAnswerButton/Click" to="GUI" method="check_answer"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/CancelButton" to="GUI" method="_on_cancel_button_pressed"]
 [connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/Parchment/CancelButton/Click" to="GUI" method="_on_click_cancel_finished"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonA" to="GUI" method="_on_texture_button_a_pressed"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB" to="GUI" method="_on_texture_button_b_pressed"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC" to="GUI" method="_on_texture_button_c_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
 [connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]
