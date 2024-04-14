@@ -1,14 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5xbaggc7htwn"]
+[gd_scene load_steps=7 format=3 uid="uid://b5xbaggc7htwn"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_tkrwa"]
 [ext_resource type="Texture2D" uid="uid://c0rd0dufkj1e3" path="res://assets/images/12 revise.webp" id="2_0fc5i"]
 [ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_gt7fk"]
+[ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="3_o8w3w"]
+
+[sub_resource type="Curve" id="Curve_nvh3k"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_dvokh"]
+colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
 
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_tkrwa")]
 StoryImage = ExtResource("2_0fc5i")
+
+[node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
+modulate = Color(2, 2, 2, 1)
+position = Vector2(362, 608)
+amount = 100
+lifetime = 1.5
+preprocess = 5.0
+speed_scale = 0.3
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.27
+texture = ExtResource("3_o8w3w")
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 300)
+direction = Vector2(1, 1)
+spread = 95.76
+gravity = Vector2(0, -9)
+initial_velocity_min = 37.04
+initial_velocity_max = 37.04
+orbit_velocity_max = 0.05
+radial_accel_max = 50.0
+damping_max = 1.0
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_nvh3k")
+color = Color(1, 0.909804, 0.701961, 1)
+color_ramp = SubResource("Gradient_dvokh")
 
 [node name="GUI" parent="." instance=ExtResource("3_gt7fk")]
 previous_path = "res://scenes/_11.tscn"

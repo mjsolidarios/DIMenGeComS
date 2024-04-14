@@ -482,22 +482,27 @@ texture_pressed = ExtResource("21_jho4g")
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
 stream = ExtResource("8_maorg")
 
-[node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+[node name="Label2" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -304.5
+offset_top = -199.5
+offset_right = 294.5
+offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 50
-text = "Sample Content"
+theme_override_font_sizes/font_size = 40
+text = "“FANTASTIC 3: UNCOVERING HIDDEN POWERS”
+WRITTEN BY: AZRIEL P. BARRIENTOS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="PopupAnswer" type="PanelContainer" parent="GUI/Control"]
 visible = false

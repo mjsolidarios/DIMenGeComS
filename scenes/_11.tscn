@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://bmdmwtqmuttuj"]
+[gd_scene load_steps=41 format=3 uid="uid://bmdmwtqmuttuj"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_pk30d"]
 [ext_resource type="Texture2D" uid="uid://chtjdnj6230of" path="res://assets/images/11 revise.webp" id="2_hb8mi"]
 [ext_resource type="Texture2D" uid="uid://ciflihamdwbaa" path="res://assets/gui/UI board Small  stone.png" id="3_4qbp1"]
+[ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="3_hgn4t"]
 [ext_resource type="Texture2D" uid="uid://dr1nayy3py6jt" path="res://assets/gui/Exclamation_Gray.png" id="4_ll2p8"]
 [ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="5_rf4o6"]
 [ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="6_agltu"]
@@ -33,6 +34,13 @@
 [ext_resource type="Texture2D" uid="uid://cb1rv5vh466bv" path="res://assets/gui/buttonLong_beige_pressed.png" id="28_1s13m"]
 [ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="28_cnvhm"]
 [ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="29_snwpn"]
+
+[sub_resource type="Curve" id="Curve_qxyd2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_hjdde"]
+colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
 
 [sub_resource type="GDScript" id="GDScript_lv3a6"]
 script/source = "extends CanvasLayer
@@ -211,6 +219,33 @@ metadata/_edit_vertical_guides_ = [-197.0]
 
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_pk30d")]
 StoryImage = ExtResource("2_hb8mi")
+
+[node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
+modulate = Color(2, 2, 2, 1)
+position = Vector2(362, 608)
+amount = 100
+lifetime = 1.5
+preprocess = 5.0
+speed_scale = 0.3
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.27
+texture = ExtResource("3_hgn4t")
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 300)
+direction = Vector2(1, 1)
+spread = 95.76
+gravity = Vector2(0, -9)
+initial_velocity_min = 37.04
+initial_velocity_max = 37.04
+orbit_velocity_max = 0.05
+radial_accel_max = 50.0
+damping_max = 1.0
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_qxyd2")
+color = Color(1, 0.909804, 0.701961, 1)
+color_ramp = SubResource("Gradient_hjdde")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = SubResource("GDScript_lv3a6")
@@ -430,22 +465,27 @@ texture_pressed = ExtResource("20_6dkmp")
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
 stream = ExtResource("7_wi5xk")
 
-[node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+[node name="Label2" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -304.5
+offset_top = -199.5
+offset_right = 294.5
+offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 50
-text = "Sample Content"
+theme_override_font_sizes/font_size = 40
+text = "“FANTASTIC 3: UNCOVERING HIDDEN POWERS”
+WRITTEN BY: AZRIEL P. BARRIENTOS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="PopupAnswer" type="PanelContainer" parent="GUI/Control"]
 visible = false

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddos4gkrv8awp"]
+[gd_scene load_steps=6 format=3 uid="uid://ddos4gkrv8awp"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_srn2g"]
 [ext_resource type="Texture2D" uid="uid://6xsa1gxhkote" path="res://assets/images/59 revise.webp" id="2_vlemb"]
 [ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_ngv6a"]
+[ext_resource type="Texture2D" uid="uid://bs72s4iglwh0" path="res://assets/gui/finish-default.png" id="4_4vch2"]
+[ext_resource type="Texture2D" uid="uid://mgw8772ntxq2" path="res://assets/gui/finish-pressed.png" id="5_1ajs1"]
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
@@ -13,3 +15,9 @@ StoryImage = ExtResource("2_vlemb")
 [node name="GUI" parent="." instance=ExtResource("3_ngv6a")]
 previous_path = "res://scenes/_58.tscn"
 next_path = "res://scenes/main.tscn"
+
+[node name="NextButton" parent="GUI/Control" index="2"]
+texture_normal = ExtResource("4_4vch2")
+texture_pressed = ExtResource("5_1ajs1")
+
+[editable path="GUI"]

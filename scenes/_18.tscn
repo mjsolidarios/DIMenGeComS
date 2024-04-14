@@ -128,7 +128,7 @@ func _on_text_edit_answer_focus_exited():
 	$Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer.text = text.to_upper()
 "
 
-[sub_resource type="FontFile" id="FontFile_i8j86"]
+[sub_resource type="FontFile" id="FontFile_11qlm"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -197,7 +197,7 @@ cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
 cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
 
 [sub_resource type="Theme" id="Theme_xlr5g"]
-default_font = SubResource("FontFile_i8j86")
+default_font = SubResource("FontFile_11qlm")
 default_font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuvkg"]
@@ -459,22 +459,27 @@ texture_pressed = ExtResource("12_v4mot")
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
 stream = ExtResource("7_5xatd")
 
-[node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+[node name="Label2" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -304.5
+offset_top = -199.5
+offset_right = 294.5
+offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 50
-text = "Sample Content"
+theme_override_font_sizes/font_size = 40
+text = "“FANTASTIC 3: UNCOVERING HIDDEN POWERS”
+WRITTEN BY: AZRIEL P. BARRIENTOS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="PopupAnswer" type="PanelContainer" parent="GUI/Control"]
 visible = false
