@@ -1,8 +1,202 @@
-[gd_scene load_steps=4 format=3 uid="uid://nu4t56n2p0a"]
+[gd_scene load_steps=37 format=3 uid="uid://nu4t56n2p0a"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_3ihm2"]
 [ext_resource type="Texture2D" uid="uid://da4w4rm2xwyf8" path="res://assets/images/18.webp" id="2_5x5aw"]
-[ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_ju8yf"]
+[ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="3_0ra8x"]
+[ext_resource type="Texture2D" uid="uid://ciflihamdwbaa" path="res://assets/gui/UI board Small  stone.png" id="4_3xa4f"]
+[ext_resource type="Texture2D" uid="uid://bukdlwms6iryn" path="res://assets/gui/answer-default.png" id="5_ays54"]
+[ext_resource type="Texture2D" uid="uid://dr1nayy3py6jt" path="res://assets/gui/Exclamation_Gray.png" id="5_tei56"]
+[ext_resource type="Texture2D" uid="uid://e5m3todh4sn3" path="res://assets/gui/answer-pressed.png" id="6_ilb2i"]
+[ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="6_uusss"]
+[ext_resource type="AudioStream" uid="uid://cdhimx6205lqc" path="res://assets/audio/click1.ogg" id="7_5xatd"]
+[ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="7_wcle8"]
+[ext_resource type="Texture2D" uid="uid://budllbdxn84gd" path="res://assets/gui/UI board Medium  stone.png" id="8_sao70"]
+[ext_resource type="Texture2D" uid="uid://b4wcyvbs5le4q" path="res://assets/gui/next-default.png" id="9_1jnuq"]
+[ext_resource type="Texture2D" uid="uid://v7rqycmwve2j" path="res://assets/gui/UI board Medium  parchment.png" id="9_ssj7j"]
+[ext_resource type="Texture2D" uid="uid://bejnwsauxjcav" path="res://assets/gui/IRONY TITLE  empty.png" id="10_onr3l"]
+[ext_resource type="Texture2D" uid="uid://bqk5mckmku4xo" path="res://assets/gui/next-pressed.png" id="10_vvn6p"]
+[ext_resource type="Texture2D" uid="uid://c2fl7ndiqsuuq" path="res://assets/gui/close-default.png" id="11_bnsik"]
+[ext_resource type="Texture2D" uid="uid://ccb4b2loqjw0e" path="res://assets/gui/menu-default.png" id="11_jr4u5"]
+[ext_resource type="Texture2D" uid="uid://b4bwygwcj0cwk" path="res://assets/gui/next-locked.png" id="11_q501f"]
+[ext_resource type="Texture2D" uid="uid://2jqylarmo7ry" path="res://assets/gui/menu-pressed.png" id="12_jx7nl"]
+[ext_resource type="Texture2D" uid="uid://cb6yfvrwpgx52" path="res://assets/gui/close-pressed.png" id="12_v4mot"]
+[ext_resource type="Texture2D" uid="uid://lo7t1cf4juuh" path="res://assets/gui/profile.png" id="13_m5d4a"]
+[ext_resource type="Texture2D" uid="uid://h76c35d3a4kb" path="res://assets/gui/submit-button.png" id="19_6x2ox"]
+[ext_resource type="Texture2D" uid="uid://b6oj0b0ydwac1" path="res://assets/gui/submit-button-pressed.png" id="20_d47yh"]
+[ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="24_hvaw2"]
+[ext_resource type="Texture2D" uid="uid://6xa0f7vljnn7" path="res://assets/gui/check.png" id="24_tqwfa"]
+[ext_resource type="Texture2D" uid="uid://dywenb8dmuilt" path="res://assets/gui/cancel-default.png" id="24_vi7c8"]
+[ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="25_6ewg7"]
+[ext_resource type="Texture2D" uid="uid://bv5nxgwwfnvfk" path="res://assets/gui/cancel-pressed.png" id="25_c4tff"]
+[ext_resource type="Texture2D" uid="uid://cmrfht3x6mlg3" path="res://assets/gui/ok-default.png" id="26_26ud0"]
+[ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="27_gj8wc"]
+
+[sub_resource type="Curve" id="Curve_c83sd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_or0ah"]
+colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_je252"]
+script/source = "extends CanvasLayer
+
+@export var previous_path: String
+@export var next_path: String
+@export var answer: String
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_menu_button_pressed():
+	$Control/MenuButton/Click.play()
+
+
+func _on_close_panel_button_pressed():
+	$Control/Popup/TextureRect/TextureRect2/ClosePanelButton/Click.play()
+
+
+func _on_click_finished():
+	$Control/Popup.hide()
+
+
+func _on_click_finished_menu():
+	$Control/Popup.show()
+
+
+func _on_back_button_pressed():
+	$Control/BackButton/Click.play()
+
+
+func _on_click_finished_back():
+	Global.goto_scene(previous_path)
+
+
+func _on_next_button_pressed():
+	$Control/NextButton/Click.play()
+
+
+func _on_click_finished_next():
+	Global.goto_scene(next_path)
+
+func check_answer():
+	$Control/PopupResult.show()
+	$Control/PopupAnswer.hide()
+	if $Control/PopupAnswer/TextureRect/TextureRect2/TextEditAnswer.text == answer:
+		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.show()
+		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.hide()
+	else:
+		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.show()
+		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.hide()
+
+func _on_sumit_answer_button_pressed():
+	$Control/Popup.hide()
+	$Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton/Click.play()
+
+func _on_answer_button_pressed():
+	$Control/PopupAnswer.show()
+
+func _on_ok_pressed():
+	$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click.play()
+
+func _on_click_ok_finished():
+	$Control/PopupResult.hide()
+	$Control/NextButton.disabled = false
+	$Control/AnswerButton.hide()
+
+func _on_try_again_pressed():
+	$Control/PopupResult.hide()
+	$Control/PopupAnswer.show()
+
+
+func _on_cancel_button_pressed():
+	$Control/PopupAnswer/TextureRect/TextureRect2/CancelButton/Click.play()
+
+
+func _on_click_cancel_finished():
+	$Control/PopupAnswer.hide()
+"
+
+[sub_resource type="FontFile" id="FontFile_mrwsh"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/1/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/3/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/3/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/3/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_xlr5g"]
+default_font = SubResource("FontFile_mrwsh")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuvkg"]
+bg_color = Color(0, 0, 0, 0.976471)
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
@@ -10,6 +204,603 @@ metadata/_edit_vertical_guides_ = [-197.0]
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_3ihm2")]
 StoryImage = ExtResource("2_5x5aw")
 
-[node name="GUI" parent="." instance=ExtResource("3_ju8yf")]
+[node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
+modulate = Color(2, 2, 2, 1)
+position = Vector2(380, 698)
+amount = 200
+lifetime = 1.5
+preprocess = 5.0
+speed_scale = 0.3
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.27
+texture = ExtResource("3_0ra8x")
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 300)
+direction = Vector2(1, 1)
+spread = 95.76
+gravity = Vector2(0, -9)
+initial_velocity_min = 37.04
+initial_velocity_max = 37.04
+orbit_velocity_max = 0.05
+radial_accel_max = 50.0
+damping_max = 1.0
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_c83sd")
+color = Color(1, 0.780392, 0.137255, 1)
+color_ramp = SubResource("Gradient_or0ah")
+
+[node name="18" type="Sprite2D" parent="DefaultStoryContainer"]
+position = Vector2(361, 766.961)
+scale = Vector2(0.872222, 0.872222)
+texture = ExtResource("2_5x5aw")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_je252")
 previous_path = "res://scenes/_17.tscn"
 next_path = "res://scenes/_19.tscn"
+answer = "1"
+
+[node name="Control" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tip" type="TextureRect" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -361.5
+offset_top = -115.0
+offset_right = 361.5
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_3xa4f")
+
+[node name="Label" type="Label" parent="GUI/Control/Tip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -261.0
+offset_right = 328.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_xlr5g")
+text = "The next story is locked. Answer the question correctly
+to unlock."
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/Tip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -330.0
+offset_top = -256.0
+offset_right = -233.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_tei56")
+
+[node name="BackButton" type="TextureButton" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -240.0
+offset_right = 354.0
+offset_bottom = -128.0
+grow_vertical = 0
+texture_normal = ExtResource("6_uusss")
+texture_pressed = ExtResource("7_wcle8")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/BackButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="NextButton" type="TextureButton" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+offset_top = -240.0
+offset_right = -16.0
+offset_bottom = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+texture_normal = ExtResource("9_1jnuq")
+texture_pressed = ExtResource("10_vvn6p")
+texture_disabled = ExtResource("11_q501f")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/NextButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="MenuButton" type="TextureButton" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -297.0
+offset_top = 81.0
+offset_right = -16.0
+offset_bottom = 193.0
+grow_horizontal = 0
+texture_normal = ExtResource("11_jr4u5")
+texture_pressed = ExtResource("12_jx7nl")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/MenuButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="Profile" type="TextureRect" parent="GUI/Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 59.0
+offset_right = 183.0
+offset_bottom = 221.0
+texture = ExtResource("13_m5d4a")
+
+[node name="AnswerButton" type="TextureButton" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -530.0
+offset_top = -363.0
+offset_right = -192.0
+offset_bottom = -251.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_ays54")
+texture_pressed = ExtResource("6_ilb2i")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/AnswerButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="Popup" type="PanelContainer" parent="GUI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuvkg")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/Popup"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_sao70")
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/Popup/TextureRect"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 701.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ssj7j")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = -54.0
+offset_right = 197.0
+offset_bottom = 55.0
+grow_horizontal = 2
+texture = ExtResource("10_onr3l")
+
+[node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[node name="ClosePanelButton" type="TextureButton" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.5
+offset_top = -56.0
+offset_right = 197.5
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("11_bnsik")
+texture_pressed = ExtResource("12_v4mot")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 50
+text = "Sample Content"
+
+[node name="PopupAnswer" type="PanelContainer" parent="GUI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuvkg")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupAnswer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_sao70")
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupAnswer/TextureRect"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 701.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ssj7j")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = -54.0
+offset_right = 197.0
+offset_bottom = 55.0
+grow_horizontal = 2
+texture = ExtResource("10_onr3l")
+
+[node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Answer"
+
+[node name="SumitAnswerButton" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 93.5
+offset_top = -48.0
+offset_right = 374.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("19_6x2ox")
+texture_pressed = ExtResource("20_d47yh")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="CancelButton" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -310.5
+offset_top = -48.0
+offset_right = -29.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("24_vi7c8")
+texture_pressed = ExtResource("25_c4tff")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2/CancelButton"]
+stream = ExtResource("7_5xatd")
+
+[node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -92.5
+offset_right = -47.5
+offset_bottom = -57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 25
+text = "Type here"
+
+[node name="TextEditAnswer" type="TextEdit" parent="GUI/Control/PopupAnswer/TextureRect/TextureRect2"]
+layout_mode = 0
+offset_left = 88.5
+offset_top = 182.0
+offset_right = 606.5
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Your Answer"
+
+[node name="PopupResult" type="PanelContainer" parent="GUI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuvkg")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_sao70")
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 701.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ssj7j")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = -54.0
+offset_right = 197.0
+offset_bottom = 55.0
+grow_horizontal = 2
+texture = ExtResource("10_onr3l")
+
+[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Answer"
+
+[node name="CorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -45.5
+offset_right = 262.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 60
+text = "Correct!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = 16.5
+offset_right = 262.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 30
+text = "Next story unlocked!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+layout_mode = 2
+offset_left = 273.5
+offset_top = 98.0
+offset_right = 498.5
+offset_bottom = 323.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_tqwfa")
+
+[node name="OK" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.5
+offset_top = -37.0
+offset_right = 172.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("26_26ud0")
+texture_pressed = ExtResource("27_gj8wc")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK"]
+stream = ExtResource("7_5xatd")
+
+[node name="IncorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -99.5
+offset_right = 262.5
+offset_bottom = -16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 60
+text = "Sorry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -37.5
+offset_right = 262.5
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 30
+text = "Please enter a correct answer."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgain" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.5
+offset_top = -37.0
+offset_right = 172.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("24_hvaw2")
+texture_pressed = ExtResource("25_6ewg7")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
+stream = ExtResource("7_5xatd")
+
+[connection signal="pressed" from="GUI/Control/BackButton" to="GUI" method="_on_back_button_pressed"]
+[connection signal="finished" from="GUI/Control/BackButton/Click" to="GUI" method="_on_click_finished_back"]
+[connection signal="pressed" from="GUI/Control/NextButton" to="GUI" method="_on_next_button_pressed"]
+[connection signal="finished" from="GUI/Control/NextButton/Click" to="GUI" method="_on_click_finished_next"]
+[connection signal="pressed" from="GUI/Control/MenuButton" to="GUI" method="_on_menu_button_pressed"]
+[connection signal="finished" from="GUI/Control/MenuButton/Click" to="GUI" method="_on_click_finished_menu"]
+[connection signal="pressed" from="GUI/Control/AnswerButton" to="GUI" method="_on_answer_button_pressed"]
+[connection signal="finished" from="GUI/Control/AnswerButton/Click" to="GUI" method="_on_click_finished_next"]
+[connection signal="pressed" from="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton" to="GUI" method="_on_close_panel_button_pressed"]
+[connection signal="finished" from="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton/Click" to="GUI" method="_on_click_finished"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton" to="GUI" method="_on_sumit_answer_button_pressed"]
+[connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/SumitAnswerButton/Click" to="GUI" method="check_answer"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/CancelButton" to="GUI" method="_on_cancel_button_pressed"]
+[connection signal="finished" from="GUI/Control/PopupAnswer/TextureRect/TextureRect2/CancelButton/Click" to="GUI" method="_on_click_cancel_finished"]
+[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
+[connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
+[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]
