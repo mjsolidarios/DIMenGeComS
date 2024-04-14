@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64mm"
+   height="64mm"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="addon_logo.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.0752245"
+     inkscape:cx="64.710724"
+     inkscape:cy="145.35524"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#ffffff;stroke-width:2.11666667;stop-color:#000000;stroke:#20ff00;stroke-opacity:1;fill-opacity:1;stroke-dasharray:none"
+       id="path171"
+       cx="13.120654"
+       cy="12.260284"
+       r="8.044467" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#20ff00;stroke-width:2.11667;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       id="path171-1"
+       cx="13.120654"
+       cy="33.431702"
+       r="8.044467" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#20ff00;stroke-width:2.11667;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       id="path171-1-0"
+       cx="13.120654"
+       cy="53.264694"
+       r="8.044467" />
+    <path
+       style="fill:#f9f9f9;stroke-width:0.665;stop-color:#000000;stroke:#0a4d00;stroke-opacity:1;stroke-dasharray:none"
+       d="M 59.45162,25.897161 H 45.341539 V 16.261008 L 31.016368,30.586182 45.08343,44.653244 V 34.414833 h 14.196118 z"
+       id="path339" />
+  </g>
+</svg>

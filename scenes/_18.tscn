@@ -123,7 +123,7 @@ func _on_click_cancel_finished():
 	$Control/PopupAnswer.hide()
 "
 
-[sub_resource type="FontFile" id="FontFile_mrwsh"]
+[sub_resource type="FontFile" id="FontFile_i8j86"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -192,7 +192,7 @@ cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
 cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
 
 [sub_resource type="Theme" id="Theme_xlr5g"]
-default_font = SubResource("FontFile_mrwsh")
+default_font = SubResource("FontFile_i8j86")
 default_font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuvkg"]
