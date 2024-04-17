@@ -89,7 +89,7 @@ color_ramp = SubResource("Gradient_inw1s")
 
 [node name="GUI2" parent="." instance=ExtResource("36_7vbfb")]
 previous_path = "res://scenes/_24.tscn"
-next_path = "res://scenes/_26.tscn"
+next_path = "res://scenes/_27.tscn"
 
 [node name="Label" type="Label" parent="GUI2"]
 anchors_preset = 7
