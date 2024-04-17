@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyqowif28ru2d"]
+[gd_scene load_steps=9 format=3 uid="uid://dyqowif28ru2d"]
 
 [ext_resource type="Texture2D" uid="uid://cp7e4tmp1ktji" path="res://assets/images/NARATION PORTRAIT.webp" id="1_o7g5k"]
 [ext_resource type="PackedScene" uid="uid://dtqlbgil4w7hs" path="res://scenes/GCC2D.tscn" id="2_1sv5f"]
 [ext_resource type="Texture2D" uid="uid://d3vkwlmvfdsjo" path="res://assets/gui/story-panel.png" id="3_srgdw"]
 [ext_resource type="AudioStream" uid="uid://dap7iviavib1w" path="res://assets/audio/bookFlip1.ogg" id="4_jq6oq"]
+[ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="5_b64ii"]
 
 [sub_resource type="GDScript" id="GDScript_ywcgd"]
 script/source = "extends Node2D
@@ -18,6 +19,13 @@ func _ready():
 func _process(delta):
 	pass
 "
+
+[sub_resource type="Curve" id="Curve_c6hdu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_w536e"]
+colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
 
 [node name="DefaultStoryContainer" type="Node2D"]
 script = SubResource("GDScript_ywcgd")
@@ -39,3 +47,30 @@ texture = ExtResource("1_o7g5k")
 [node name="BookFlip" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jq6oq")
 autoplay = true
+
+[node name="ParticlesExtra" type="CPUParticles2D" parent="."]
+modulate = Color(2, 2, 2, 1)
+position = Vector2(362, 608)
+amount = 100
+lifetime = 1.5
+preprocess = 5.0
+speed_scale = 0.3
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.27
+texture = ExtResource("5_b64ii")
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 300)
+direction = Vector2(1, 1)
+spread = 95.76
+gravity = Vector2(0, -9)
+initial_velocity_min = 37.04
+initial_velocity_max = 37.04
+orbit_velocity_max = 0.05
+radial_accel_max = 50.0
+damping_max = 1.0
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_c6hdu")
+color = Color(1, 0.909804, 0.701961, 1)
+color_ramp = SubResource("Gradient_w536e")

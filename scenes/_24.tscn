@@ -18,7 +18,7 @@ metadata/_edit_vertical_guides_ = [-197.0]
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_pkne0")]
 StoryImage = ExtResource("2_q64fb")
 
-[node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
+[node name="Particles2" type="CPUParticles2D" parent="DefaultStoryContainer"]
 modulate = Color(2, 2, 2, 1)
 position = Vector2(362, 608)
 amount = 100

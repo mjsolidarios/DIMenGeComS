@@ -14,7 +14,7 @@ StoryImage = ExtResource("2_vlemb")
 
 [node name="GUI" parent="." instance=ExtResource("3_ngv6a")]
 previous_path = "res://scenes/_58.tscn"
-next_path = "res://scenes/main.tscn"
+next_path = "res://scenes/welcome.tscn"
 
 [node name="NextButton" parent="GUI/Control" index="2"]
 texture_normal = ExtResource("4_4vch2")

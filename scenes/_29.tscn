@@ -11,5 +11,5 @@ metadata/_edit_vertical_guides_ = [-197.0]
 StoryImage = ExtResource("2_jjhgd")
 
 [node name="GUI" parent="." instance=ExtResource("3_e6k4e")]
-previous_path = "res://scenes/_27.tscn"
+previous_path = "res://scenes/_28.tscn"
 next_path = "res://scenes/_30.tscn"

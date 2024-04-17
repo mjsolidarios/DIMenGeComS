@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Fantastic 3"
-run/main_scene="res://scenes/main.tscn"
+config/name="DIMenGeComS"
+run/main_scene="res://scenes/welcome.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.203922, 0.164706, 0.141176, 1)
 config/icon="res://icon.png"

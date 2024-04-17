@@ -1,0 +1,196 @@
+[gd_scene load_steps=8 format=3 uid="uid://desgvenwk3fhd"]
+
+[ext_resource type="Texture2D" uid="uid://cw2i1qptpye0c" path="res://assets/images/icon-single.png" id="1_50n1o"]
+[ext_resource type="Texture2D" uid="uid://bfa3yy3h3hqqk" path="res://assets/gui/start-story-default.png" id="2_sgdii"]
+[ext_resource type="Texture2D" uid="uid://16nuoeaxf885" path="res://assets/gui/start-story-pressed.png" id="3_xjio4"]
+[ext_resource type="AudioStream" uid="uid://f3f03vfgxxq4" path="res://assets/audio/Woodland Fantasy.ogg" id="10_p4auu"]
+
+[sub_resource type="GDScript" id="GDScript_pinpm"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	MusicController.play_music()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Environment" id="Environment_n24t2"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 8.0
+glow_bloom = 0.44
+glow_hdr_threshold = 1.5
+
+[sub_resource type="GDScript" id="GDScript_jvs6p"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_texture_button_pressed():
+	Global.goto_scene(\"res://scenes/main_menu.tscn\")
+"
+
+[node name="Control" type="Node"]
+script = SubResource("GDScript_pinpm")
+metadata/_edit_vertical_guides_ = [359.0]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node2D"]
+environment = SubResource("Environment_n24t2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_jvs6p")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -480.5
+offset_right = 123.5
+offset_bottom = -411.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "WELCOME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -168.0
+offset_right = 138.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "By: Azriel P. Barrientos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = -400.5
+offset_right = 344.0
+offset_bottom = -187.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "DIGITAL INTERACTIVE MENDELIAN GENETICS COMIC STORIES"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -731.0
+offset_right = 100.0
+offset_bottom = -531.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_50n1o")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -62.0
+offset_bottom = 562.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ScrollContainer"]
+custom_minimum_size = Vector2(300, 1000)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ScrollContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 30.0
+offset_right = -43.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "About DIMenGeComS 
+
+Welcome to DIMenGeComS - Digital Interactive Mendelian Genetics Comic Story!
+
+For everyone interested in Mendelian Genetics, whether you are a student, teacher, or simply someone who enjoys learning, DIMenGeComS is an entertaining way to learn about the amazing world of heredity and genetic variations. DIMenGeComS is a state-of-the-art educational tool that attempts to make studying Mendelian genetics engaging, interactive, and pleasurably enjoyable.
+
+Now, take an interesting trip through the field of Mendelian genetics with DIMenGeComs. In DIMenGeComS, there's always something new to uncover, whether you're delving into interactive comics, solving genetic puzzles, or investigating mysteries around inheritance. Come along as we uncover the mysteries of heredity one comic panel at a time"
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.5
+offset_top = -181.0
+offset_right = 140.5
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_sgdii")
+texture_pressed = ExtResource("3_xjio4")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_p4auu")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]

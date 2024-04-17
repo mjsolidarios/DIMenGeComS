@@ -12,4 +12,4 @@ StoryImage = ExtResource("2_gm12c")
 
 [node name="GUI" parent="." instance=ExtResource("3_pfnpp")]
 previous_path = "res://scenes/_31.tscn"
-next_path = "res://scenes/_33.tscn"
+next_path = "res://scenes/_33_punnet.tscn"
