@@ -1,53 +1,62 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmdmwtqmuttuj"]
+[gd_scene load_steps=40 format=3 uid="uid://om6ejs0bldn5"]
 
-[ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_pk30d"]
-[ext_resource type="Texture2D" uid="uid://chtjdnj6230of" path="res://assets/images/11 revise.webp" id="2_hb8mi"]
-[ext_resource type="Texture2D" uid="uid://ciflihamdwbaa" path="res://assets/gui/UI board Small  stone.png" id="3_4qbp1"]
-[ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="3_hgn4t"]
-[ext_resource type="Texture2D" uid="uid://dr1nayy3py6jt" path="res://assets/gui/Exclamation_Gray.png" id="4_ll2p8"]
-[ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="5_rf4o6"]
-[ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="6_agltu"]
-[ext_resource type="AudioStream" uid="uid://cdhimx6205lqc" path="res://assets/audio/click1.ogg" id="7_wi5xk"]
-[ext_resource type="Texture2D" uid="uid://b4wcyvbs5le4q" path="res://assets/gui/next-default.png" id="8_ofv54"]
-[ext_resource type="Texture2D" uid="uid://bqk5mckmku4xo" path="res://assets/gui/next-pressed.png" id="9_ixw6j"]
-[ext_resource type="Texture2D" uid="uid://b4bwygwcj0cwk" path="res://assets/gui/next-locked.png" id="10_nqx4i"]
-[ext_resource type="Texture2D" uid="uid://ccb4b2loqjw0e" path="res://assets/gui/menu-default.png" id="11_h2hjo"]
-[ext_resource type="Texture2D" uid="uid://2jqylarmo7ry" path="res://assets/gui/menu-pressed.png" id="12_p41h3"]
-[ext_resource type="Texture2D" uid="uid://lo7t1cf4juuh" path="res://assets/gui/profile.png" id="13_qwl4v"]
-[ext_resource type="Texture2D" uid="uid://bukdlwms6iryn" path="res://assets/gui/answer-default.png" id="14_08n1q"]
-[ext_resource type="Texture2D" uid="uid://e5m3todh4sn3" path="res://assets/gui/answer-pressed.png" id="15_mate2"]
-[ext_resource type="Texture2D" uid="uid://budllbdxn84gd" path="res://assets/gui/UI board Medium  stone.png" id="16_37hph"]
-[ext_resource type="Texture2D" uid="uid://v7rqycmwve2j" path="res://assets/gui/UI board Medium  parchment.png" id="17_v1u5t"]
-[ext_resource type="Texture2D" uid="uid://bejnwsauxjcav" path="res://assets/gui/IRONY TITLE  empty.png" id="18_rb310"]
-[ext_resource type="Texture2D" uid="uid://c2fl7ndiqsuuq" path="res://assets/gui/close-default.png" id="19_1olym"]
-[ext_resource type="Texture2D" uid="uid://cb6yfvrwpgx52" path="res://assets/gui/close-pressed.png" id="20_6dkmp"]
-[ext_resource type="Texture2D" uid="uid://h76c35d3a4kb" path="res://assets/gui/submit-button.png" id="21_oxd84"]
-[ext_resource type="Texture2D" uid="uid://bceh7bfmwk6wq" path="res://assets/gui/UI board Medium  stone - long.png" id="21_utqms"]
-[ext_resource type="Texture2D" uid="uid://bfuq8t42fvrik" path="res://assets/gui/parchment-long.png" id="22_lghjj"]
-[ext_resource type="Texture2D" uid="uid://b6oj0b0ydwac1" path="res://assets/gui/submit-button-pressed.png" id="22_sl4rd"]
-[ext_resource type="Texture2D" uid="uid://dywenb8dmuilt" path="res://assets/gui/cancel-default.png" id="23_1m2fo"]
-[ext_resource type="Texture2D" uid="uid://bv5nxgwwfnvfk" path="res://assets/gui/cancel-pressed.png" id="24_tni0g"]
-[ext_resource type="Texture2D" uid="uid://6xa0f7vljnn7" path="res://assets/gui/check.png" id="25_saoik"]
-[ext_resource type="Texture2D" uid="uid://cmrfht3x6mlg3" path="res://assets/gui/ok-default.png" id="26_6a5no"]
-[ext_resource type="Texture2D" uid="uid://bx66ogl3lr5ps" path="res://assets/gui/buttonLong_beige.png" id="27_2rrk5"]
-[ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="27_8lanf"]
-[ext_resource type="Texture2D" uid="uid://cb1rv5vh466bv" path="res://assets/gui/buttonLong_beige_pressed.png" id="28_1s13m"]
-[ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="28_cnvhm"]
-[ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="29_snwpn"]
+[ext_resource type="Texture2D" uid="uid://b6mm7k6awnrfg" path="res://assets/images/31_extra.webp" id="1_23yn4"]
+[ext_resource type="PackedScene" uid="uid://dtqlbgil4w7hs" path="res://scenes/GCC2D.tscn" id="2_gsa6n"]
+[ext_resource type="Texture2D" uid="uid://v7rqycmwve2j" path="res://assets/gui/UI board Medium  parchment.png" id="3_3yuix"]
+[ext_resource type="AudioStream" uid="uid://dap7iviavib1w" path="res://assets/audio/bookFlip1.ogg" id="4_usebg"]
+[ext_resource type="Texture2D" uid="uid://ciflihamdwbaa" path="res://assets/gui/UI board Small  stone.png" id="5_sflpb"]
+[ext_resource type="Texture2D" uid="uid://dr1nayy3py6jt" path="res://assets/gui/Exclamation_Gray.png" id="6_qiy2t"]
+[ext_resource type="Texture2D" uid="uid://dp6633mponphu" path="res://assets/gui/back-default.png" id="7_itv4s"]
+[ext_resource type="Texture2D" uid="uid://dqx7hjqe6aef2" path="res://assets/gui/back-pressed.png" id="8_b0lv3"]
+[ext_resource type="AudioStream" uid="uid://cdhimx6205lqc" path="res://assets/audio/click1.ogg" id="9_5hpg6"]
+[ext_resource type="Texture2D" uid="uid://b4wcyvbs5le4q" path="res://assets/gui/next-default.png" id="10_31g58"]
+[ext_resource type="Texture2D" uid="uid://bqk5mckmku4xo" path="res://assets/gui/next-pressed.png" id="11_6jlag"]
+[ext_resource type="Texture2D" uid="uid://b4bwygwcj0cwk" path="res://assets/gui/next-locked.png" id="12_qhnwf"]
+[ext_resource type="Texture2D" uid="uid://ccb4b2loqjw0e" path="res://assets/gui/menu-default.png" id="13_pc0xm"]
+[ext_resource type="Texture2D" uid="uid://2jqylarmo7ry" path="res://assets/gui/menu-pressed.png" id="14_05w6i"]
+[ext_resource type="Texture2D" uid="uid://lo7t1cf4juuh" path="res://assets/gui/profile.png" id="15_hsql8"]
+[ext_resource type="Texture2D" uid="uid://bukdlwms6iryn" path="res://assets/gui/answer-default.png" id="16_7f6qw"]
+[ext_resource type="Texture2D" uid="uid://e5m3todh4sn3" path="res://assets/gui/answer-pressed.png" id="17_52tig"]
+[ext_resource type="Texture2D" uid="uid://budllbdxn84gd" path="res://assets/gui/UI board Medium  stone.png" id="18_hoyux"]
+[ext_resource type="Texture2D" uid="uid://bejnwsauxjcav" path="res://assets/gui/IRONY TITLE  empty.png" id="19_g7flf"]
+[ext_resource type="Texture2D" uid="uid://c2fl7ndiqsuuq" path="res://assets/gui/close-default.png" id="20_wmqt5"]
+[ext_resource type="Texture2D" uid="uid://cb6yfvrwpgx52" path="res://assets/gui/close-pressed.png" id="21_gbmqk"]
+[ext_resource type="Texture2D" uid="uid://bceh7bfmwk6wq" path="res://assets/gui/UI board Medium  stone - long.png" id="22_x3svc"]
+[ext_resource type="Texture2D" uid="uid://bfuq8t42fvrik" path="res://assets/gui/parchment-long.png" id="23_0h5te"]
+[ext_resource type="Texture2D" uid="uid://h76c35d3a4kb" path="res://assets/gui/submit-button.png" id="24_88dg4"]
+[ext_resource type="Texture2D" uid="uid://b6oj0b0ydwac1" path="res://assets/gui/submit-button-pressed.png" id="25_gpwla"]
+[ext_resource type="Texture2D" uid="uid://dywenb8dmuilt" path="res://assets/gui/cancel-default.png" id="26_dltsu"]
+[ext_resource type="Texture2D" uid="uid://bv5nxgwwfnvfk" path="res://assets/gui/cancel-pressed.png" id="27_tyfet"]
+[ext_resource type="Texture2D" uid="uid://bx66ogl3lr5ps" path="res://assets/gui/buttonLong_beige.png" id="28_ni7xc"]
+[ext_resource type="Texture2D" uid="uid://cb1rv5vh466bv" path="res://assets/gui/buttonLong_beige_pressed.png" id="29_a7y11"]
+[ext_resource type="Texture2D" uid="uid://6xa0f7vljnn7" path="res://assets/gui/check.png" id="30_vl5mq"]
+[ext_resource type="Texture2D" uid="uid://cmrfht3x6mlg3" path="res://assets/gui/ok-default.png" id="31_6nllf"]
+[ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="32_ihk64"]
+[ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="33_lynda"]
+[ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="34_hv2l1"]
 
-[sub_resource type="Curve" id="Curve_qxyd2"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="GDScript" id="GDScript_ywcgd"]
+script/source = "extends Node2D
 
-[sub_resource type="Gradient" id="Gradient_hjdde"]
-colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
+@export var StoryImage:Texture
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$\"Story-panel/Portrait\".texture = StoryImage
 
-[sub_resource type="GDScript" id="GDScript_lv3a6"]
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_qxkj3"]
 script/source = "extends CanvasLayer
 
 @export var previous_path: String
 @export var next_path: String
 @export var answer: String
+@export var punnet_code: String
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -92,7 +101,16 @@ func _on_click_finished_next():
 func check_answer():
 	$Control/PopupResult.show()
 	$Control/PopupAnswer.hide()
-	if $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower() == answer:
+	var linedit_combined = \"\"
+	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit1\".text
+	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit2\".text
+	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit3\".text
+	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit4\".text
+	linedit_combined= linedit_combined.replace(\" \",\"\")
+	
+	print(linedit_combined, \" \", punnet_code)
+	
+	if $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower() == answer && linedit_combined == punnet_code:
 		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.show()
 		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.hide()
 	else:
@@ -137,9 +155,17 @@ func _on_texture_button_b_pressed():
 
 func _on_texture_button_c_pressed():
 	$Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text=\"C\"
+
+
+func _on_texture_button_d_pressed():
+	$Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text=\"D\"
+
+
+func _on_texture_button_trigger_pressed():
+	$Control/PopupAnswer.show()
 "
 
-[sub_resource type="FontFile" id="FontFile_6ahja"]
+[sub_resource type="FontFile" id="FontFile_q66ia"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -207,51 +233,81 @@ cache/0/25/0/kerning_overrides/3/0 = Vector2(0, 0)
 cache/0/25/0/kerning_overrides/50/0 = Vector2(0, 0)
 cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
 
-[sub_resource type="Theme" id="Theme_agiuq"]
-default_font = SubResource("FontFile_6ahja")
+[sub_resource type="Theme" id="Theme_0d7o8"]
+default_font = SubResource("FontFile_q66ia")
 default_font_size = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l6hn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rdyu"]
 bg_color = Color(0, 0, 0, 0.976471)
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
 
-[node name="DefaultStoryContainer" parent="." instance=ExtResource("1_pk30d")]
-StoryImage = ExtResource("2_hb8mi")
+[node name="DefaultStoryContainer" type="Node2D" parent="."]
+script = SubResource("GDScript_ywcgd")
+StoryImage = ExtResource("1_23yn4")
 
-[node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
-modulate = Color(2, 2, 2, 1)
-position = Vector2(362, 608)
-amount = 100
-lifetime = 1.5
-preprocess = 5.0
-speed_scale = 0.3
-explosiveness = 0.1
-randomness = 1.0
-lifetime_randomness = 0.27
-texture = ExtResource("3_hgn4t")
-emission_shape = 3
-emission_rect_extents = Vector2(1500, 300)
-direction = Vector2(1, 1)
-spread = 95.76
-gravity = Vector2(0, -9)
-initial_velocity_min = 37.04
-initial_velocity_max = 37.04
-orbit_velocity_max = 0.05
-radial_accel_max = 50.0
-damping_max = 1.0
-scale_amount_min = 0.0
-scale_amount_max = 0.2
-scale_amount_curve = SubResource("Curve_qxyd2")
-color = Color(1, 0.909804, 0.701961, 1)
-color_ramp = SubResource("Gradient_hjdde")
+[node name="GCC2D" parent="DefaultStoryContainer" instance=ExtResource("2_gsa6n")]
+anchor_mode = 0
+
+[node name="Story-panel" type="Sprite2D" parent="DefaultStoryContainer"]
+position = Vector2(363.5, 765.5)
+scale = Vector2(1.06929, 1.08421)
+texture = ExtResource("3_3yuix")
+
+[node name="Portrait" type="Sprite2D" parent="DefaultStoryContainer/Story-panel"]
+position = Vector2(-1.92609, -0.851501)
+scale = Vector2(0.843327, 0.831724)
+texture = ExtResource("1_23yn4")
+
+[node name="TextureButtonTrigger" type="TextureButton" parent="DefaultStoryContainer/Story-panel/Portrait"]
+offset_left = 181.654
+offset_top = -106.872
+offset_right = 355.654
+offset_bottom = 39.1285
+
+[node name="LineEdit1" type="LineEdit" parent="DefaultStoryContainer/Story-panel/Portrait"]
+offset_left = -161.782
+offset_top = -91.2179
+offset_right = -5.7821
+offset_bottom = 11.7821
+theme_override_font_sizes/font_size = 40
+alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="DefaultStoryContainer/Story-panel/Portrait"]
+offset_left = 6.77689
+offset_top = -91.2179
+offset_right = 162.777
+offset_bottom = 11.7821
+theme_override_font_sizes/font_size = 40
+alignment = 1
+
+[node name="LineEdit3" type="LineEdit" parent="DefaultStoryContainer/Story-panel/Portrait"]
+offset_left = -161.782
+offset_top = 19.6759
+offset_right = -5.7821
+offset_bottom = 122.676
+theme_override_font_sizes/font_size = 40
+alignment = 1
+
+[node name="LineEdit4" type="LineEdit" parent="DefaultStoryContainer/Story-panel/Portrait"]
+offset_left = 6.7769
+offset_top = 19.6759
+offset_right = 162.777
+offset_bottom = 122.676
+theme_override_font_sizes/font_size = 40
+alignment = 1
+
+[node name="BookFlip" type="AudioStreamPlayer2D" parent="DefaultStoryContainer"]
+stream = ExtResource("4_usebg")
+autoplay = true
 
 [node name="GUI" type="CanvasLayer" parent="."]
-script = SubResource("GDScript_lv3a6")
-previous_path = "res://scenes/_10.tscn"
-next_path = "res://scenes/_12.tscn"
-answer = "a"
+script = SubResource("GDScript_qxkj3")
+previous_path = "res://scenes/_34.tscn"
+next_path = "res://scenes/_35.tscn"
+answer = "b"
+punnet_code = "BBBbBbbb"
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
@@ -275,7 +331,7 @@ offset_right = 361.5
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_4qbp1")
+texture = ExtResource("5_sflpb")
 
 [node name="Label" type="Label" parent="GUI/Control/Tip"]
 layout_mode = 1
@@ -284,16 +340,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -272.0
+offset_left = -271.5
 offset_top = -261.0
-offset_right = 328.0
+offset_right = 328.5
 offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_agiuq")
-text = "The next story is locked. Answer the question correctly
-to unlock."
+theme = SubResource("Theme_0d7o8")
+text = "Fill in the Punnett square and tap the YELLOW FISH to reveal the question."
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Control/Tip"]
 layout_mode = 1
@@ -309,7 +365,7 @@ offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ll2p8")
+texture = ExtResource("6_qiy2t")
 
 [node name="BackButton" type="TextureButton" parent="GUI/Control"]
 layout_mode = 1
@@ -317,15 +373,15 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -264.0
+offset_top = -272.0
 offset_right = 354.0
-offset_bottom = -152.0
+offset_bottom = -160.0
 grow_vertical = 0
-texture_normal = ExtResource("5_rf4o6")
-texture_pressed = ExtResource("6_agltu")
+texture_normal = ExtResource("7_itv4s")
+texture_pressed = ExtResource("8_b0lv3")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/BackButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="NextButton" type="TextureButton" parent="GUI/Control"]
 layout_mode = 1
@@ -335,18 +391,18 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -354.0
-offset_top = -264.0
+offset_top = -272.0
 offset_right = -16.0
-offset_bottom = -152.0
+offset_bottom = -160.0
 grow_horizontal = 0
 grow_vertical = 0
 disabled = true
-texture_normal = ExtResource("8_ofv54")
-texture_pressed = ExtResource("9_ixw6j")
-texture_disabled = ExtResource("10_nqx4i")
+texture_normal = ExtResource("10_31g58")
+texture_pressed = ExtResource("11_6jlag")
+texture_disabled = ExtResource("12_qhnwf")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/NextButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="MenuButton" type="TextureButton" parent="GUI/Control"]
 layout_mode = 1
@@ -358,11 +414,11 @@ offset_top = 81.0
 offset_right = -16.0
 offset_bottom = 193.0
 grow_horizontal = 0
-texture_normal = ExtResource("11_h2hjo")
-texture_pressed = ExtResource("12_p41h3")
+texture_normal = ExtResource("13_pc0xm")
+texture_pressed = ExtResource("14_05w6i")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/MenuButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="Profile" type="TextureRect" parent="GUI/Control"]
 layout_mode = 0
@@ -370,9 +426,10 @@ offset_left = 24.0
 offset_top = 59.0
 offset_right = 183.0
 offset_bottom = 221.0
-texture = ExtResource("13_qwl4v")
+texture = ExtResource("15_hsql8")
 
 [node name="AnswerButton" type="TextureButton" parent="GUI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -380,16 +437,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -530.0
-offset_top = -387.0
+offset_top = -363.0
 offset_right = -192.0
-offset_bottom = -275.0
+offset_bottom = -251.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("14_08n1q")
-texture_pressed = ExtResource("15_mate2")
+texture_normal = ExtResource("16_7f6qw")
+texture_pressed = ExtResource("17_52tig")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/AnswerButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="Popup" type="PanelContainer" parent="GUI/Control"]
 visible = false
@@ -399,13 +456,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6l6hn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5rdyu")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/Popup"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("16_37hph")
+texture = ExtResource("18_hoyux")
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Control/Popup/TextureRect"]
 layout_mode = 2
@@ -415,7 +472,7 @@ offset_right = 701.0
 offset_bottom = 493.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("17_v1u5t")
+texture = ExtResource("3_3yuix")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
 layout_mode = 1
@@ -427,7 +484,7 @@ offset_top = -54.0
 offset_right = 197.0
 offset_bottom = 55.0
 grow_horizontal = 2
-texture = ExtResource("18_rb310")
+texture = ExtResource("19_g7flf")
 
 [node name="Label" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2/TextureRect"]
 layout_mode = 1
@@ -459,11 +516,11 @@ offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("19_1olym")
-texture_pressed = ExtResource("20_6dkmp")
+texture_normal = ExtResource("20_wmqt5")
+texture_pressed = ExtResource("21_gbmqk")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/Popup/TextureRect/TextureRect2/ClosePanelButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="Label2" type="Label" parent="GUI/Control/Popup/TextureRect/TextureRect2"]
 layout_mode = 1
@@ -495,13 +552,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6l6hn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5rdyu")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupAnswer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("21_utqms")
+texture = ExtResource("22_x3svc")
 
 [node name="Parchment" type="TextureRect" parent="GUI/Control/PopupAnswer/TextureRect"]
 layout_mode = 1
@@ -512,7 +569,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("22_lghjj")
+texture = ExtResource("23_0h5te")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 1
@@ -524,7 +581,7 @@ offset_top = -54.0
 offset_right = 197.0
 offset_bottom = 55.0
 grow_horizontal = 2
-texture = ExtResource("18_rb310")
+texture = ExtResource("19_g7flf")
 
 [node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureRect"]
 layout_mode = 1
@@ -556,11 +613,11 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("21_oxd84")
-texture_pressed = ExtResource("22_sl4rd")
+texture_normal = ExtResource("24_88dg4")
+texture_pressed = ExtResource("25_gpwla")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/SumitAnswerButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="CancelButton" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 1
@@ -576,11 +633,11 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("23_1m2fo")
-texture_pressed = ExtResource("24_tni0g")
+texture_normal = ExtResource("26_dltsu")
+texture_pressed = ExtResource("27_tyfet")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/CancelButton"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="LabelQuestion" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 1
@@ -590,24 +647,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -461.5
+offset_top = -489.5
 offset_right = 257.0
-offset_bottom = -374.5
+offset_bottom = -222.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 30
-text = "Do you remember what phenotype 
-refers to again? (Tap one box below)"
+text = "In a monohybrid cross, if a pea plant with the genotype Bb is crossed with another pea plant with the genotype Bb, what is the probability of having offspring with the genotype BB?"
+autowrap_mode = 3
 
 [node name="TextureButtonA" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 0
-offset_left = 66.5
-offset_top = 242.0
-offset_right = 643.5
-offset_bottom = 425.0
-texture_normal = ExtResource("27_2rrk5")
-texture_pressed = ExtResource("28_1s13m")
+offset_left = 67.0
+offset_top = 378.0
+offset_right = 644.0
+offset_bottom = 476.0
+texture_normal = ExtResource("28_ni7xc")
+texture_pressed = ExtResource("29_a7y11")
 stretch_mode = 0
 
 [node name="LabelA" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonA"]
@@ -618,25 +675,23 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.5
-offset_top = -75.5
+offset_top = -27.5
 offset_right = 248.5
-offset_bottom = 56.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 30
-text = "A. ) The physical appearance of an 
-organism, which is determined
-by its genotype. "
+text = "0%"
 
 [node name="TextureButtonB" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 0
-offset_left = 66.5
-offset_top = 458.0
-offset_right = 643.5
-offset_bottom = 641.0
-texture_normal = ExtResource("27_2rrk5")
-texture_pressed = ExtResource("28_1s13m")
+offset_left = 67.0
+offset_top = 490.0
+offset_right = 644.0
+offset_bottom = 599.0
+texture_normal = ExtResource("28_ni7xc")
+texture_pressed = ExtResource("29_a7y11")
 stretch_mode = 0
 
 [node name="LabelB" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB"]
@@ -647,25 +702,23 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.5
-offset_top = -75.5
+offset_top = -27.5
 offset_right = 248.5
-offset_bottom = 56.5
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 30
-text = "B. )  Phenotype primarily denotes
- the reproductive capabilities of 
-an organism. "
+text = "25%  "
 
 [node name="TextureButtonC" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 0
-offset_left = 66.5
-offset_top = 682.0
-offset_right = 643.5
-offset_bottom = 865.0
-texture_normal = ExtResource("27_2rrk5")
-texture_pressed = ExtResource("28_1s13m")
+offset_left = 67.0
+offset_top = 617.0
+offset_right = 644.0
+offset_bottom = 728.0
+texture_normal = ExtResource("28_ni7xc")
+texture_pressed = ExtResource("29_a7y11")
 stretch_mode = 0
 
 [node name="LabelC" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC"]
@@ -676,16 +729,41 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.5
-offset_top = -75.5
+offset_top = -29.5
 offset_right = 248.5
-offset_bottom = 56.5
+offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 30
-text = "C. )  Phenotype is primarily 
-concerned with the evolutionary
- history of an organism."
+text = "50% "
+
+[node name="TextureButtonD" type="TextureButton" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 745.0
+offset_right = 644.0
+offset_bottom = 856.0
+texture_normal = ExtResource("28_ni7xc")
+texture_pressed = ExtResource("29_a7y11")
+stretch_mode = 0
+
+[node name="LabelD" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -29.5
+offset_right = 248.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
+theme_override_font_sizes/font_size = 30
+text = "75%"
 
 [node name="Label" type="Label" parent="GUI/Control/PopupAnswer/TextureRect/Parchment"]
 layout_mode = 1
@@ -694,10 +772,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = 366.5
-offset_right = 13.0
-offset_bottom = 421.5
+offset_left = -213.0
+offset_top = 365.5
+offset_right = 11.0
+offset_bottom = 420.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
@@ -711,10 +789,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = 319.5
-offset_right = 141.0
-offset_bottom = 456.5
+offset_top = 318.5
+offset_right = 139.0
+offset_bottom = 455.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
@@ -730,13 +807,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6l6hn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5rdyu")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("16_37hph")
+texture = ExtResource("18_hoyux")
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect"]
 layout_mode = 2
@@ -746,7 +823,7 @@ offset_right = 701.0
 offset_bottom = 493.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("17_v1u5t")
+texture = ExtResource("3_3yuix")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
 layout_mode = 1
@@ -758,7 +835,7 @@ offset_top = -54.0
 offset_right = 197.0
 offset_bottom = 55.0
 grow_horizontal = 2
-texture = ExtResource("18_rb310")
+texture = ExtResource("19_g7flf")
 
 [node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/TextureRect"]
 layout_mode = 1
@@ -829,7 +906,7 @@ offset_top = 98.0
 offset_right = 498.5
 offset_bottom = 323.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("25_saoik")
+texture = ExtResource("30_vl5mq")
 
 [node name="OK" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
 layout_mode = 1
@@ -845,11 +922,11 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("26_6a5no")
-texture_pressed = ExtResource("27_8lanf")
+texture_normal = ExtResource("31_6nllf")
+texture_pressed = ExtResource("32_ihk64")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="IncorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
 visible = false
@@ -912,11 +989,11 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("28_cnvhm")
-texture_pressed = ExtResource("29_snwpn")
+texture_normal = ExtResource("33_lynda")
+texture_pressed = ExtResource("34_hv2l1")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
-stream = ExtResource("7_wi5xk")
+stream = ExtResource("9_5hpg6")
 
 [node name="Label" type="Label" parent="GUI"]
 anchors_preset = 7
@@ -924,17 +1001,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -23.0
-offset_top = -158.0
-offset_right = 23.0
-offset_bottom = -103.0
+offset_left = -44.0
+offset_top = -159.0
+offset_right = 44.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
-text = "11"
+text = "33_P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="DefaultStoryContainer/Story-panel/Portrait/TextureButtonTrigger" to="GUI" method="_on_texture_button_trigger_pressed"]
 [connection signal="pressed" from="GUI/Control/BackButton" to="GUI" method="_on_back_button_pressed"]
 [connection signal="finished" from="GUI/Control/BackButton/Click" to="GUI" method="_on_click_finished_back"]
 [connection signal="pressed" from="GUI/Control/NextButton" to="GUI" method="_on_next_button_pressed"]
@@ -952,6 +1030,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonA" to="GUI" method="_on_texture_button_a_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB" to="GUI" method="_on_texture_button_b_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC" to="GUI" method="_on_texture_button_c_pressed"]
+[connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonD" to="GUI" method="_on_texture_button_d_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
 [connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
 [connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]

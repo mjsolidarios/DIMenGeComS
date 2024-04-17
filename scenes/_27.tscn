@@ -12,15 +12,20 @@ StoryImage = ExtResource("2_0s80w")
 
 [node name="GUI" parent="." instance=ExtResource("3_ohqej")]
 previous_path = "res://scenes/_26.tscn"
-next_path = "res://scenes/_28.tscn"
+next_path = "res://scenes/_26_PS.tscn"
 
 [node name="Label" type="Label" parent="GUI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 55.0
-grow_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -173.0
+offset_right = 23.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "27"
 horizontal_alignment = 1
