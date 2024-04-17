@@ -797,6 +797,18 @@ texture_pressed = ExtResource("25_6ewg7")
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
 stream = ExtResource("7_5xatd")
 
+[node name="Label" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "18"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="GUI/Control/BackButton" to="GUI" method="_on_back_button_pressed"]
 [connection signal="finished" from="GUI/Control/BackButton/Click" to="GUI" method="_on_click_finished_back"]
 [connection signal="pressed" from="GUI/Control/NextButton" to="GUI" method="_on_next_button_pressed"]

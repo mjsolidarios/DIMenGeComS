@@ -1,15 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ympstkswtkcb"]
+[gd_scene load_steps=7 format=3 uid="uid://dt71m1ajf5lxl"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_npl0v"]
 [ext_resource type="Texture2D" uid="uid://dhxcorm6k3top" path="res://assets/images/9 revise.webp" id="2_ste36"]
 [ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="3_gyhrh"]
 [ext_resource type="Texture2D" uid="uid://b77m4h6dryqxr" path="res://assets/images/circle_05.png" id="3_i57sm"]
 
-[sub_resource type="Curve" id="Curve_5a8jg"]
+[sub_resource type="Curve" id="Curve_iqvxp"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.657382, 0.56338), 0.179162, 0.179162, 0, 0, Vector2(0.924791, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_itelt"]
+[sub_resource type="Gradient" id="Gradient_fskwi"]
 colors = PackedColorArray(1, 1, 1, 1, 0.647059, 0.780392, 1, 1)
 
 [node name="0" type="Node"]
@@ -20,8 +20,8 @@ StoryImage = ExtResource("2_ste36")
 
 [node name="Particles" type="CPUParticles2D" parent="DefaultStoryContainer"]
 modulate = Color(2, 2, 2, 1)
-position = Vector2(362, 608)
-amount = 100
+position = Vector2(380, 698)
+amount = 200
 lifetime = 1.5
 preprocess = 5.0
 speed_scale = 0.3
@@ -41,10 +41,22 @@ radial_accel_max = 50.0
 damping_max = 1.0
 scale_amount_min = 0.0
 scale_amount_max = 0.2
-scale_amount_curve = SubResource("Curve_5a8jg")
-color = Color(1, 0.909804, 0.701961, 1)
-color_ramp = SubResource("Gradient_itelt")
+scale_amount_curve = SubResource("Curve_iqvxp")
+color = Color(1, 0.780392, 0.137255, 1)
+color_ramp = SubResource("Gradient_fskwi")
 
 [node name="GUI" parent="." instance=ExtResource("3_gyhrh")]
 previous_path = "res://scenes/_8.tscn"
 next_path = "res://scenes/_10.tscn"
+
+[node name="Label" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1

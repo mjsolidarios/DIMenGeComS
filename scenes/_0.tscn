@@ -9,3 +9,15 @@ metadata/_edit_vertical_guides_ = [-197.0]
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_dwol1")]
 
 [node name="GUI" parent="." instance=ExtResource("5_17h5n")]
+
+[node name="Label" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

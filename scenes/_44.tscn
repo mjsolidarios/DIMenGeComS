@@ -302,7 +302,7 @@ script = SubResource("GDScript_su2jb")
 previous_path = "res://scenes/_43.tscn"
 next_path = "res://scenes/_45.tscn"
 answer = "b"
-punnet_code = "rWRwrWRwrWRwRw"
+punnet_code = "RwrWRwrWRwrWRwrW"
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
@@ -965,6 +965,18 @@ texture_pressed = ExtResource("34_ltu5x")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
 stream = ExtResource("8_maorg")
+
+[node name="Label" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "44_P"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="DefaultStoryContainer/Story-panel/Portrait/TextureButtonTrigger" to="GUI" method="_on_texture_button_trigger_pressed"]
 [connection signal="pressed" from="GUI/Control/BackButton" to="GUI" method="_on_back_button_pressed"]

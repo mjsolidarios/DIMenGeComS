@@ -53,3 +53,15 @@ autoplay = true
 [node name="GUI2" parent="." instance=ExtResource("35_443ae")]
 previous_path = "res://scenes/_30.tscn"
 next_path = "res://scenes/_32.tscn"
+
+[node name="Label" type="Label" parent="GUI2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "31"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -48,3 +48,15 @@ color_ramp = SubResource("Gradient_x87h0")
 [node name="GUI" parent="." instance=ExtResource("3_axq0n")]
 previous_path = "res://scenes/_4.tscn"
 next_path = "res://scenes/_6.tscn"
+
+[node name="Label" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
