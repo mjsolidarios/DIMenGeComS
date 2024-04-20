@@ -1,23 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2g6lyc8sbdm6"]
+[gd_scene load_steps=4 format=3 uid="uid://b2g6lyc8sbdm6"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_t6prg"]
-[ext_resource type="Texture2D" uid="uid://c1q8ypq37rum5" path="res://assets/images/38 revise.webp" id="2_1fugo"]
-[ext_resource type="Texture2D" uid="uid://v7rqycmwve2j" path="res://assets/gui/UI board Medium  parchment.png" id="17_ptudd"]
+[ext_resource type="Texture2D" uid="uid://bcxpokn4go38x" path="res://assets/images/38 revise no-interaction.webp" id="2_vus8v"]
 [ext_resource type="PackedScene" uid="uid://blqngaajr45yk" path="res://components/gui.tscn" id="34_1legi"]
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
 
 [node name="DefaultStoryContainer" parent="." instance=ExtResource("1_t6prg")]
-StoryImage = ExtResource("2_1fugo")
+StoryImage = ExtResource("2_vus8v")
 
 [node name="Story-panel" parent="DefaultStoryContainer" index="1"]
-scale = Vector2(1.06098, 1.07579)
-texture = ExtResource("17_ptudd")
+scale = Vector2(1.53524, 1.55667)
 
 [node name="Portrait" parent="DefaultStoryContainer/Story-panel" index="0"]
-scale = Vector2(0.759964, 0.749508)
-texture = ExtResource("2_1fugo")
+scale = Vector2(0.549057, 0.541503)
+texture = ExtResource("2_vus8v")
 
 [node name="TextureButtonTrigger" type="TextureButton" parent="DefaultStoryContainer/Story-panel" index="1"]
 offset_left = 67.0

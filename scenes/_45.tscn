@@ -12,7 +12,7 @@ StoryImage = ExtResource("2_h42mo")
 
 [node name="GUI" parent="." instance=ExtResource("3_4mr20")]
 previous_path = "res://scenes/_44.tscn"
-next_path = "res://scenes/_46.tscn"
+next_path = "res://scenes/_44_P.tscn"
 
 [node name="Label" type="Label" parent="GUI"]
 anchors_preset = 7

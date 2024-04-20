@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://om6ejs0bldn5"]
+[gd_scene load_steps=38 format=3 uid="uid://om6ejs0bldn5"]
 
 [ext_resource type="Texture2D" uid="uid://b6mm7k6awnrfg" path="res://assets/images/31_extra.webp" id="1_23yn4"]
 [ext_resource type="PackedScene" uid="uid://dtqlbgil4w7hs" path="res://scenes/GCC2D.tscn" id="2_gsa6n"]
@@ -29,11 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://bv5nxgwwfnvfk" path="res://assets/gui/cancel-pressed.png" id="27_tyfet"]
 [ext_resource type="Texture2D" uid="uid://bx66ogl3lr5ps" path="res://assets/gui/buttonLong_beige.png" id="28_ni7xc"]
 [ext_resource type="Texture2D" uid="uid://cb1rv5vh466bv" path="res://assets/gui/buttonLong_beige_pressed.png" id="29_a7y11"]
-[ext_resource type="Texture2D" uid="uid://6xa0f7vljnn7" path="res://assets/gui/check.png" id="30_vl5mq"]
-[ext_resource type="Texture2D" uid="uid://cmrfht3x6mlg3" path="res://assets/gui/ok-default.png" id="31_6nllf"]
-[ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="32_ihk64"]
-[ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="33_lynda"]
-[ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="34_hv2l1"]
+[ext_resource type="PackedScene" uid="uid://dtsvd6xpqwgto" path="res://components/popup_result.tscn" id="30_fdtjv"]
+[ext_resource type="Texture2D" uid="uid://cht2g1s481xv5" path="res://assets/gui/star.png" id="35_3x3ul"]
 
 [sub_resource type="GDScript" id="GDScript_ywcgd"]
 script/source = "extends Node2D
@@ -99,8 +96,6 @@ func _on_click_finished_next():
 	Global.goto_scene(next_path)
 
 func check_answer():
-	$Control/PopupResult.show()
-	$Control/PopupAnswer.hide()
 	var linedit_combined = \"\"
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit1\".text
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit2\".text
@@ -108,14 +103,19 @@ func check_answer():
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/Portrait/LineEdit4\".text
 	linedit_combined= linedit_combined.replace(\" \",\"\")
 	
-	print(linedit_combined, \" \", punnet_code)
+	var word_problem_answer = $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower()
 	
-	if $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower() == answer && linedit_combined == punnet_code:
-		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.show()
-		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.hide()
-	else:
-		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.show()
-		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.hide()
+	if linedit_combined == punnet_code && word_problem_answer == answer:
+		$Control/PopupResult.mode = 0
+	if linedit_combined != punnet_code && word_problem_answer == answer:
+		$Control/PopupResult.mode = 1
+	if linedit_combined == punnet_code && word_problem_answer != answer:
+		$Control/PopupResult.mode = 2
+	if linedit_combined != punnet_code && word_problem_answer != answer:
+		$Control/PopupResult.mode = 3
+	
+	$Control/PopupResult.show()
+	$Control/PopupAnswer.hide()
 
 func _on_sumit_answer_button_pressed():
 	$Control/Popup.hide()
@@ -239,6 +239,20 @@ default_font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rdyu"]
 bg_color = Color(0, 0, 0, 0.976471)
+
+[sub_resource type="GDScript" id="GDScript_ktv0h"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$StarCount.text = str(Global.total_score) + \"/\" + str(Global.max_score)
+"
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
@@ -405,6 +419,7 @@ texture_disabled = ExtResource("12_qhnwf")
 stream = ExtResource("9_5hpg6")
 
 [node name="MenuButton" type="TextureButton" parent="GUI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -799,201 +814,42 @@ theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PopupResult" type="PanelContainer" parent="GUI/Control"]
-visible = false
+[node name="PopupResult" parent="GUI/Control" node_paths=PackedStringArray("answer_node", "next_button_node") instance=ExtResource("30_fdtjv")]
 layout_mode = 1
-anchors_preset = 15
+answer_node = NodePath("../PopupAnswer")
+next_button_node = NodePath("../NextButton")
+star_points = 2
+
+[node name="Star" type="TextureRect" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5rdyu")
+offset_left = -303.0
+offset_top = 73.0
+offset_right = -175.0
+offset_bottom = 201.0
+grow_horizontal = 0
+texture = ExtResource("35_3x3ul")
+script = SubResource("GDScript_ktv0h")
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("18_hoyux")
-
-[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect"]
-layout_mode = 2
-offset_left = 21.0
-offset_top = 18.0
-offset_right = 701.0
-offset_bottom = 493.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_3yuix")
-
-[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -197.0
-offset_top = -54.0
-offset_right = 197.0
-offset_bottom = 55.0
-grow_horizontal = 2
-texture = ExtResource("19_g7flf")
-
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Answer"
-
-[node name="CorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.5
-offset_top = -45.5
-offset_right = 262.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 60
-text = "Correct!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.5
-offset_top = 16.5
-offset_right = 262.5
-offset_bottom = 99.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 30
-text = "Next story unlocked!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
-layout_mode = 2
-offset_left = 273.5
-offset_top = 98.0
-offset_right = 498.5
-offset_bottom = 323.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("30_vl5mq")
-
-[node name="OK" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+[node name="StarCount" type="Label" parent="GUI/Control/Star"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -108.5
-offset_top = -37.0
-offset_right = 172.5
-offset_bottom = 75.0
+offset_left = 77.0
+offset_top = -107.0
+offset_right = 213.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("31_6nllf")
-texture_pressed = ExtResource("32_ihk64")
-
-[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK"]
-stream = ExtResource("9_5hpg6")
-
-[node name="IncorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.5
-offset_top = -99.5
-offset_right = 262.5
-offset_bottom = -16.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
 theme_override_font_sizes/font_size = 60
-text = "Sorry"
+text = "0/6"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.5
-offset_top = -37.5
-offset_right = 262.5
-offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.196078, 0.0941176, 0.0470588, 1)
-theme_override_font_sizes/font_size = 30
-text = "Please enter a correct answer."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TryAgain" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -108.5
-offset_top = -37.0
-offset_right = 172.5
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("33_lynda")
-texture_pressed = ExtResource("34_hv2l1")
-
-[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
-stream = ExtResource("9_5hpg6")
 
 [node name="Label" type="Label" parent="GUI"]
 anchors_preset = 7
@@ -1031,6 +887,3 @@ vertical_alignment = 1
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB" to="GUI" method="_on_texture_button_b_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC" to="GUI" method="_on_texture_button_c_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonD" to="GUI" method="_on_texture_button_d_pressed"]
-[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
-[connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
-[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]

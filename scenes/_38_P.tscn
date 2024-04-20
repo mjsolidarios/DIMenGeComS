@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://emhb64hjurry"]
+[gd_scene load_steps=42 format=3 uid="uid://emhb64hjurry"]
 
 [ext_resource type="PackedScene" uid="uid://dyqowif28ru2d" path="res://components/default_story_container.tscn" id="1_d61tm"]
 [ext_resource type="Texture2D" uid="uid://c1q8ypq37rum5" path="res://assets/images/38 revise.webp" id="2_0er2i"]
@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://dfdknyfox7hb6" path="res://assets/gui/ok-pressed.png" id="32_v4fck"]
 [ext_resource type="Texture2D" uid="uid://jlugugj3n8gj" path="res://assets/gui/try-again-default.png" id="33_grdtx"]
 [ext_resource type="Texture2D" uid="uid://be2rpi62ia7a0" path="res://assets/gui/try-again-pressed.png" id="34_rmtup"]
+[ext_resource type="Texture2D" uid="uid://cht2g1s481xv5" path="res://assets/gui/star.png" id="35_7f2bq"]
+[ext_resource type="PackedScene" uid="uid://dtsvd6xpqwgto" path="res://components/popup_result.tscn" id="36_7r2ml"]
 
 [sub_resource type="GDScript" id="GDScript_6rcrq"]
 script/source = "extends CanvasLayer
@@ -84,23 +86,27 @@ func _on_click_finished_next():
 	Global.goto_scene(next_path)
 
 func check_answer():
-	$Control/PopupResult.show()
-	$Control/PopupAnswer.hide()
 	var linedit_combined = \"\"
-	
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/LineEdit1\".text
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/LineEdit2\".text
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/LineEdit3\".text
 	linedit_combined+=$\"../DefaultStoryContainer/Story-panel/LineEdit4\".text
 	linedit_combined= linedit_combined.replace(\" \",\"\")
 	
-	if $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower() == answer && linedit_combined == punnet_code:
-		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.show()
-		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.hide()
-	else:
-		$Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse.show()
-		$Control/PopupResult/TextureRect/TextureRect2/CorrectResponse.hide()
-
+	var word_problem_answer = $Control/PopupAnswer/TextureRect/Parchment/PlayerAnswer.text.to_lower()
+	
+	if linedit_combined == punnet_code && word_problem_answer == answer:
+		$Control/PopupResult.mode = 0
+	if linedit_combined != punnet_code && word_problem_answer == answer:
+		$Control/PopupResult.mode = 1
+	if linedit_combined == punnet_code && word_problem_answer != answer:
+		$Control/PopupResult.mode = 2
+	if linedit_combined != punnet_code && word_problem_answer != answer:
+		$Control/PopupResult.mode = 3
+	
+	$Control/PopupResult.show()
+	$Control/PopupAnswer.hide()
+	
 func _on_sumit_answer_button_pressed():
 	$Control/Popup.hide()
 	$Control/PopupAnswer/TextureRect/Parchment/SumitAnswerButton/Click.play()
@@ -223,6 +229,20 @@ default_font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi4hd"]
 bg_color = Color(0, 0, 0, 0.976471)
+
+[sub_resource type="GDScript" id="GDScript_afnhw"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$StarCount.text = str(Global.total_score) + \"/\" + str(Global.max_score)
+"
 
 [node name="0" type="Node"]
 metadata/_edit_vertical_guides_ = [-197.0]
@@ -385,6 +405,7 @@ texture_disabled = ExtResource("12_brpb2")
 stream = ExtResource("9_5lbtw")
 
 [node name="MenuButton" type="TextureButton" parent="GUI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -755,7 +776,7 @@ theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PopupResult" type="PanelContainer" parent="GUI/Control"]
+[node name="PopupResultx" type="PanelContainer" parent="GUI/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -765,13 +786,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pi4hd")
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult"]
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResultx"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("18_fisld")
 
-[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect"]
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResultx/TextureRect"]
 layout_mode = 2
 offset_left = 21.0
 offset_top = 18.0
@@ -781,7 +802,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_p4kxw")
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -793,7 +814,7 @@ offset_bottom = 55.0
 grow_horizontal = 2
 texture = ExtResource("19_i8wo6")
 
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/TextureRect"]
+[node name="Label" type="Label" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -809,7 +830,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Answer"
 
-[node name="CorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+[node name="CorrectResponse" type="Control" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -817,7 +838,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+[node name="Label" type="Label" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -836,7 +857,7 @@ text = "Correct!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+[node name="Label2" type="Label" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -855,7 +876,7 @@ text = "Next story unlocked!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+[node name="TextureRect2" type="TextureRect" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse"]
 layout_mode = 2
 offset_left = 273.5
 offset_top = 98.0
@@ -864,7 +885,7 @@ offset_bottom = 323.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("30_f7c2l")
 
-[node name="OK" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse"]
+[node name="OK" type="TextureButton" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -881,10 +902,10 @@ scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("31_wm7sx")
 texture_pressed = ExtResource("32_v4fck")
 
-[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK"]
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse/OK"]
 stream = ExtResource("9_5lbtw")
 
-[node name="IncorrectResponse" type="Control" parent="GUI/Control/PopupResult/TextureRect/TextureRect2"]
+[node name="IncorrectResponse" type="Control" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -893,7 +914,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+[node name="Label" type="Label" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/IncorrectResponse"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -912,7 +933,7 @@ text = "Sorry"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+[node name="Label2" type="Label" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/IncorrectResponse"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -931,7 +952,7 @@ text = "Please enter a correct answer."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TryAgain" type="TextureButton" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse"]
+[node name="TryAgain" type="TextureButton" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/IncorrectResponse"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -948,8 +969,45 @@ scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("33_grdtx")
 texture_pressed = ExtResource("34_rmtup")
 
-[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
+[node name="Click" type="AudioStreamPlayer2D" parent="GUI/Control/PopupResultx/TextureRect/TextureRect2/IncorrectResponse/TryAgain"]
 stream = ExtResource("9_5lbtw")
+
+[node name="Star" type="TextureRect" parent="GUI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -303.0
+offset_top = 73.0
+offset_right = -175.0
+offset_bottom = 201.0
+grow_horizontal = 0
+texture = ExtResource("35_7f2bq")
+script = SubResource("GDScript_afnhw")
+
+[node name="StarCount" type="Label" parent="GUI/Control/Star"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -107.0
+offset_right = 213.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "0/6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopupResult" parent="GUI/Control" node_paths=PackedStringArray("answer_node", "next_button_node") instance=ExtResource("36_7r2ml")]
+layout_mode = 1
+answer_node = NodePath("../PopupAnswer")
+next_button_node = NodePath("../NextButton")
+star_points = 2
 
 [node name="Label" type="Label" parent="GUI"]
 anchors_preset = 7
@@ -986,8 +1044,8 @@ vertical_alignment = 1
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonA" to="GUI" method="_on_texture_button_a_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonB" to="GUI" method="_on_texture_button_b_pressed"]
 [connection signal="pressed" from="GUI/Control/PopupAnswer/TextureRect/Parchment/TextureButtonC" to="GUI" method="_on_texture_button_c_pressed"]
-[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
-[connection signal="finished" from="GUI/Control/PopupResult/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
-[connection signal="pressed" from="GUI/Control/PopupResult/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]
+[connection signal="pressed" from="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse/OK" to="GUI" method="_on_ok_pressed"]
+[connection signal="finished" from="GUI/Control/PopupResultx/TextureRect/TextureRect2/CorrectResponse/OK/Click" to="GUI" method="_on_click_ok_finished"]
+[connection signal="pressed" from="GUI/Control/PopupResultx/TextureRect/TextureRect2/IncorrectResponse/TryAgain" to="GUI" method="_on_try_again_pressed"]
 
 [editable path="DefaultStoryContainer"]
