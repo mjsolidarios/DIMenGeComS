@@ -330,7 +330,7 @@ script = SubResource("GDScript_su2jb")
 previous_path = "res://scenes/_44.tscn"
 next_path = "res://scenes/_46.tscn"
 answer = "b"
-punnet_code = "RwrWRwrWRwrWRwrW"
+punnet_code = "RrWwRrWwRrWwRrWw"
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
